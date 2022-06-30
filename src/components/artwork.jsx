@@ -38,8 +38,8 @@ const Artwork = ({
     }
   };
 
+  // ! calling the function
   useEffect(() => {
-    // ! calling the function
     fetchImg();
   }, []);
 
