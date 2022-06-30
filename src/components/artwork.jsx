@@ -31,6 +31,7 @@ const Artwork = ({ imageId, setImageId, setIiifUrl, iiifUrl }) => {
   // ! calling the function
   useEffect(() => {
     fetchImg();
+    //eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
