@@ -1,16 +1,8 @@
 import { useState, useEffect } from "react";
-import react from "react";
 import "../App.css";
 import { faker } from "@faker-js/faker";
 
-const Artwork = ({
-  error,
-  setError,
-  imageId,
-  setImageId,
-  setIiifUrl,
-  iiifUrl,
-}) => {
+const Artwork = ({ imageId, setImageId, setIiifUrl, iiifUrl }) => {
   const [moreInfo, setMoreInfo] = useState(false);
 
   let pageNum = Math.floor(Math.random() * 5000) + 1;
@@ -18,7 +10,6 @@ const Artwork = ({
   //! FETCH
   const fetchImg = async () => {
     try {
-      setError(false);
       const res = await fetch(
         `https://api.artic.edu/api/v1/artworks?fields=id,artist_title,title,artist_display,image_id&limit=12&page=${pageNum}`
       );
@@ -34,7 +25,6 @@ const Artwork = ({
       console.log(iiifUrl, "i am iiifUrl");
     } catch (error) {
       console.log(error, "error");
-      setError({ error: true, message: error.message });
     }
   };
 

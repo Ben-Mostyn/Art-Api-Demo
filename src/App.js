@@ -5,10 +5,7 @@ import { faker } from "@faker-js/faker";
 function App() {
   const [imageId, setImagieId] = useState([]);
   const [iiifUrl, setIiifUrl] = useState([]);
-  const [error, setError] = useState({
-    error: false,
-    message: "",
-  });
+
   const addFakerData = (data) => {
     let fakerData = faker.commerce.price((10, 20));
     console.log(fakerData, "i am faker data");
@@ -39,7 +36,6 @@ function App() {
         setImageId={setImagieId}
         iiifUrl={iiifUrl}
         setIiifUrl={setIiifUrl}
-        setError={setError}
       />
     </div>
   );
