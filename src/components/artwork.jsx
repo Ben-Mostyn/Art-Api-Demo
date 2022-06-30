@@ -48,7 +48,7 @@ const Artwork = ({
       <div className="main-tile-container">
         {imageId.map((item, index) => {
           return (
-            <div className="tile">
+            <div className="tile" key={index}>
               <h1> {item.title} </h1>
               <h2>By {item.artist_title}</h2>
               <p>{item.artist_display}</p>
